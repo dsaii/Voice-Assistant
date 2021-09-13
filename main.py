@@ -61,8 +61,7 @@ def task_execution():     # it recognize what is the intent of the command
         # Logic for executing tasks based on query
         if 'wikipedia' in query:
             speak('Searching Wikipedia...')
-            try: 
-                print(z)
+            try:
                 query = query.replace("wikipedia","")
                 print(f"{query.upper()} : ")
                 results = wikipedia.summary(query, sentences=1)
