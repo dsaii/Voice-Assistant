@@ -44,4 +44,4 @@ Ans. Downlod the requirements.txt file from the repository and make sure the cur
 ## CREDITS
 
 - [Hardik Majethia](https://github.com/Majethia)
-- [Sahil Bhor](https://gitbub.com/Sahil-Bhor)
+- [Sahil Bhor](https://github.com/Sahil-Bhor)
