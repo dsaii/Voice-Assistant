@@ -61,25 +61,31 @@ def task_execution():     # it recognize what is the intent of the command
         # Logic for executing tasks based on query
         if 'wikipedia' in query:
             speak('Searching Wikipedia...')
-            query = query.replace("wikipedia","")
-            print(f"{query.upper()} : ")
-            results = wikipedia.summary(query, sentences=1)
-            speak("According to Wikipedia")
-            print(results)
-            speak(results)
-            speak("If you want more details, let me know")
+            try: 
+                print(z)
+                query = query.replace("wikipedia","")
+                print(f"{query.upper()} : ")
+                results = wikipedia.summary(query, sentences=1)
+                speak("According to Wikipedia")
+                print(results)
+                speak(results)
+                speak("If you want more details, let me know")
 
-            while True:
-                more_details = take_command()
-                if "more details" in more_details:
-                    results = wikipedia.summary(query, sentences=3)
-                    speak("According to Wikipedia")
-                    print(results)
-                    speak(results)
-                    
-                elif "thank you" in more_details:
-                    speak("What's your next command !")
-                    break
+                while True:
+                    more_details = take_command()
+                    if "more details" in more_details:
+                        results = wikipedia.summary(query, sentences=3)
+                        speak("According to Wikipedia")
+                        print(results)
+                        speak(results)
+                        
+                    elif "thank you" in more_details:
+                        speak("What's your next command !")
+                        break
+
+            except:
+                print("I'm sorry Sir, I cannot connect to the Wikipedia server right now, can I do anything else for you...!")
+                speak("I'm sorry Sir, I cannot connect to the Wikipedia server right now, can I do anything else for you...!")    
 
         elif 'open youtube' in query:
             webbrowser.open('https://www.youtube.com/')
@@ -117,8 +123,8 @@ def task_execution():     # it recognize what is the intent of the command
             break
 
         elif 'good bye' in query or 'goodbye' in query:
-            speak("Have a good Time sir, Buh-Bye...!")
             print("Have a good Time sir, Buh-Bye...!")
+            speak("Have a good Time sir, Buh-Bye...!")
             sys.exit()
 
         elif 'give your introduction' in query:
@@ -134,13 +140,13 @@ if __name__ == '__main__':
             task_execution()
 
         elif 'good bye' in permission or 'goodbye' in permission:
-            speak("Have a good Time sir, Buh-Bye...!")
             print("Have a good Time sir, Buh-Bye...!")
+            speak("Have a good Time sir, Buh-Bye...!")
             sys.exit()
 
         elif 'are you there' in permission:
-            speak("yes sir. I'm always there to help you.....!")
             print("yes sir. I'm always there to help you.....!")
+            speak("yes sir. I'm always there to help you.....!")
             task_execution()
 
         
