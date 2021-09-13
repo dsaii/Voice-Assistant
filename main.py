@@ -102,7 +102,8 @@ def task_execution():     # it recognize what is the intent of the command
             
         elif 'play music' in query:
             speak('Okay, here is your music! Enjoy!')
-            subprocess.call(["afplay", "/Users/sahilbhor/songs/music1 .mp3"])
+            playsound("path to song")                         #  ------ for windows 
+         #  subprocess.call(["afplay", "Path to song"])       #  ------ for mac users
           
         elif 'take me to our college erp' in query:
             webbrowser.open('https://engg.dpuerp.in/Login.aspx')
@@ -127,8 +128,11 @@ def task_execution():     # it recognize what is the intent of the command
             sys.exit()
 
         elif 'give your introduction' in query:
-            subprocess.call(["afplay", "/Users/sahilbhor/songs/Jarvis Startup - Introduction.mp3"])
-
+            playsound("Jarvis Startup - Introduction.mp3") # put the audio file in cwd.                   ---for windows 
+            
+          # subprocess.call(["afplay", "/Users/sahilbhor/songs/Jarvis Startup - Introduction.mp3"]).      ---for mac users
+            
+          # you can use speak function rather than the audio file
 
 if __name__ == '__main__':
     while True:
